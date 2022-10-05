@@ -3,16 +3,13 @@
 # Due date: October 9, 2022
 # Authors: Matt Wagers, ..., ...
 
-import random # May delete later
-import numpy as np
+import time
+import random 
 import pandas as pd # Could use for graphs
 
-#arrH = []
-#for i in range(1,100):
-#    arrH[i] = random.randint(1, 100)
 
 
-
+# Generates random numbers
 def randomNumberList(num, start, end):
     result = []
     for i in range(num):
@@ -107,10 +104,17 @@ def insertion_sort(arr):
         
     return arr
 
+# Testing Zone
 
 
-
-arrH = randomNumberList(100, 1, 100)
+arrH = randomNumberList(1000, 1, 1000)
 print(arrH)
-insertion_sort(arrH)
+
+start_time = time.time()
+bubble_sort(arrH)
+total_time = time.time() - start_time
+print(total_time)
+
+print(arrH)
+random.shuffle(arrH)
 print(arrH)
