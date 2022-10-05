@@ -7,12 +7,21 @@ import random # May delete later
 import numpy as np
 import pandas as pd # Could use for graphs
 
-arrH = []
-for i in range(0,100):
-    arrH[i] = np.randint(1, 100, 100)
+#arrH = []
+#for i in range(1,100):
+#    arrH[i] = random.randint(1, 100)
 
 
 
+def randomNumberList(num, start, end):
+    result = []
+    for i in range(num):
+        temp = random.randint(start, end + 1)
+        result. append(temp)
+        
+    return result
+
+# Code for Bubble Sort
 def bubble_sort(arr):
     def swap(i, j):
         arr[i], arr[j] = arr[j], arr[i]
@@ -31,6 +40,8 @@ def bubble_sort(arr):
                 
     return arr
 
+
+# Code for Merge Sort
 def merge_sort(arr):
     if len(arr) <= 1:
         return arr
@@ -40,7 +51,6 @@ def merge_sort(arr):
     
     # Merge each side together
     return merge(left, right, arr.copy())
-
 def merge(left, right, merged):
     left_cursor, right_cursor = 0, 0
     while left_cursor < len(left) and right_cursor < len(right):
@@ -97,3 +107,10 @@ def insertion_sort(arr):
         
     return arr
 
+
+
+
+arrH = randomNumberList(100, 1, 100)
+print(arrH)
+insertion_sort(arrH)
+print(arrH)
