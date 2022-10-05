@@ -33,8 +33,7 @@ def bubble_sort(arr):
         for i in range(1, n - x):
             if arr[i - 1] > arr[i]:
                 swap(i - 1, i)
-                swapped = True
-                
+                swapped = True  
     return arr
 
 
@@ -106,15 +105,113 @@ def insertion_sort(arr):
 
 # Testing Zone
 
+# Create Lists
+arrH = randomNumberList(100, 1, 100)
+arrT = randomNumberList(1000, 1, 1000)
+arrTT = randomNumberList(10_000, 1, 10_000)
+arrHT = randomNumberList(100_000, 1, 100_000)
+#print(arrH)
 
-arrH = randomNumberList(1000, 1, 1000)
-print(arrH)
-
+# Record time for array of 100 elements
+# After each test, the array(list) is shuffled
 start_time = time.time()
 bubble_sort(arrH)
-total_time = time.time() - start_time
-print(total_time)
-
-print(arrH)
+arrH_total_time = time.time() - start_time
+print("Sorting time of Bubble Sort using 100 elements: ", arrH_total_time, " seconds\n")
 random.shuffle(arrH)
-print(arrH)
+
+start_time = time.time()
+merge_sort(arrH)
+arrH_total_time = time.time() - start_time
+print("Sorting time of Merge Sort using 100 elements: ", arrH_total_time, " seconds\n")
+random.shuffle(arrH)
+
+start_time = time.time()
+quick_sort(arrH)
+arrH_total_time = time.time() - start_time
+print("Sorting time of Quick Sort using 100 elements: ", arrH_total_time, " seconds\n")
+random.shuffle(arrH)
+
+start_time = time.time()
+insertion_sort(arrH)
+arrH_total_time = time.time() - start_time
+print("Sorting time of Insertion Sort using 100 elements: ", arrH_total_time, " seconds\n\n")
+random.shuffle(arrH)
+
+
+# Record time for array of 1000 elements
+start_time = time.time()
+bubble_sort(arrT)
+arrT_total_time = time.time() - start_time
+print("Sorting time of Bubble Sort using 1000 elements: ", arrT_total_time, " seconds\n")
+random.shuffle(arrT)
+
+start_time = time.time()
+merge_sort(arrT)
+arrT_total_time = time.time() - start_time
+print("Sorting time of Merge Sort using 1000 elements: ", arrT_total_time, " seconds\n")
+random.shuffle(arrT)
+
+start_time = time.time()
+quick_sort(arrT)
+arrT_total_time = time.time() - start_time
+print("Sorting time of Quick Sort using 1000 elements: ", arrT_total_time, " seconds\n")
+random.shuffle(arrT)
+
+start_time = time.time()
+insertion_sort(arrT)
+arrT_total_time = time.time() - start_time
+print("Sorting time of Insertion Sort using 1000 elements: ", arrT_total_time, " seconds\n\n")
+random.shuffle(arrT)
+
+
+# Record time for array of 10_000 elements
+start_time = time.time()
+bubble_sort(arrTT)
+arrTT_total_time = time.time() - start_time
+print("Sorting time of Bubble Sort using 10000 elements: ", arrTT_total_time, " seconds\n")
+random.shuffle(arrTT)
+
+start_time = time.time()
+merge_sort(arrTT)
+arrTT_total_time = time.time() - start_time
+print("Sorting time of Merge Sort using 10000 elements: ", arrTT_total_time, " seconds\n")
+random.shuffle(arrTT)
+
+start_time = time.time()
+quick_sort(arrTT)
+arrTT_total_time = time.time() - start_time
+print("Sorting time of Quick Sort using 10000 elements: ", arrTT_total_time, " seconds\n")
+random.shuffle(arrTT)
+
+start_time = time.time()
+insertion_sort(arrTT)
+arrTT_total_time = time.time() - start_time
+print("Sorting time of Insertion Sort using 10000 elements: ", arrTT_total_time, " seconds\n\n")
+random.shuffle(arrTT)
+
+
+# Record time for array of 100_000 elements
+start_time = time.time()
+bubble_sort(arrHT)
+arrHT_total_time = time.time() - start_time
+print("Sorting time of Bubble Sort using 100000 elements: ", arrHT_total_time, " seconds\n")
+random.shuffle(arrHT)
+
+start_time = time.time()
+merge_sort(arrHT)
+arrHT_total_time = time.time() - start_time
+print("Sorting time of Merge Sort using 100000 elements: ", arrHT_total_time, " seconds\n")
+random.shuffle(arrHT)
+
+start_time = time.time()
+quick_sort(arrHT)
+arrHT_total_time = time.time() - start_time
+print("Sorting time of Quick Sort using 100000 elements: ", arrHT_total_time, " seconds\n")
+random.shuffle(arrHT)
+
+start_time = time.time()
+insertion_sort(arrHT)
+arrHT_total_time = time.time() - start_time
+print("Sorting time of Insertion Sort using 100000 elements: ", arrHT_total_time, " seconds\n\n")
+random.shuffle(arrHT)
