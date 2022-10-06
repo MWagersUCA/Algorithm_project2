@@ -103,6 +103,35 @@ def insertion_sort(arr):
         
     return arr
 
+
+# Reverse order to test worst case for sorts
+def reverse_order(arr):
+    for i in range(len(arr)):
+        max = i
+        for j in range(i + 1, len(arr)):
+            if arr[j] > arr[max]:
+                max = j
+                
+        arr[max], arr[i] = arr[i], arr[max]
+    return arr
+
+
+# Call this function by sending an array to test
+# along with a sorting algorithm to perform
+# Algorithms available:
+#   bubble_sort
+#   insertion_sort
+#   merge_sort
+#   quick_sort
+# Returns T(n)
+def experiment(arr, sort):
+    start_time = time.time()
+    sort(arr)
+    arr_total_time = time.time() - start_time
+    return arr_total_time
+
+
+
 # Testing Zone
 
 # Create Lists
@@ -110,108 +139,25 @@ arrH = randomNumberList(100, 1, 100)
 arrT = randomNumberList(1000, 1, 1000)
 arrTT = randomNumberList(10_000, 1, 10_000)
 arrHT = randomNumberList(100_000, 1, 100_000)
-#print(arrH)
 
-# Record time for array of 100 elements
-# After each test, the array(list) is shuffled
-start_time = time.time()
-bubble_sort(arrH)
-arrH_total_time = time.time() - start_time
-print("Sorting time of Bubble Sort using 100 elements: ", arrH_total_time, " seconds\n")
-random.shuffle(arrH)
+print("Array of 100 Elements:")
+print("Average T(n): ", experiment(arrH, bubble_sort))
+print("Best T(n): ", experiment(arrH, bubble_sort))
+print("Worst T(n): ", experiment(reverse_order(arrH), bubble_sort))
 
-start_time = time.time()
-merge_sort(arrH)
-arrH_total_time = time.time() - start_time
-print("Sorting time of Merge Sort using 100 elements: ", arrH_total_time, " seconds\n")
-random.shuffle(arrH)
+print("\nArray of 1000 Elements:")
+print("Average T(n): ", experiment(arrT, bubble_sort))
+print("Best T(n): ", experiment(arrT, bubble_sort))
+print("Worst T(n): ", experiment(reverse_order(arrT), bubble_sort))
 
-start_time = time.time()
-quick_sort(arrH)
-arrH_total_time = time.time() - start_time
-print("Sorting time of Quick Sort using 100 elements: ", arrH_total_time, " seconds\n")
-random.shuffle(arrH)
+print("\nArray of 10_000 Elements:")
+print("Average T(n): ", experiment(arrTT, bubble_sort))
+print("Best T(n): ", experiment(arrTT, bubble_sort))
+print("Worst T(n): ", experiment(reverse_order(arrTT), bubble_sort))
 
-start_time = time.time()
-insertion_sort(arrH)
-arrH_total_time = time.time() - start_time
-print("Sorting time of Insertion Sort using 100 elements: ", arrH_total_time, " seconds\n\n")
-random.shuffle(arrH)
+print("\nArray of 100_000 Elements:")
+print("Average T(n): ", experiment(arrHT, bubble_sort))
+print("Best T(n): ", experiment(arrHT, bubble_sort))
+print("Worst T(n): ", experiment(reverse_order(arrHT), bubble_sort))
 
 
-# Record time for array of 1000 elements
-start_time = time.time()
-bubble_sort(arrT)
-arrT_total_time = time.time() - start_time
-print("Sorting time of Bubble Sort using 1000 elements: ", arrT_total_time, " seconds\n")
-random.shuffle(arrT)
-
-start_time = time.time()
-merge_sort(arrT)
-arrT_total_time = time.time() - start_time
-print("Sorting time of Merge Sort using 1000 elements: ", arrT_total_time, " seconds\n")
-random.shuffle(arrT)
-
-start_time = time.time()
-quick_sort(arrT)
-arrT_total_time = time.time() - start_time
-print("Sorting time of Quick Sort using 1000 elements: ", arrT_total_time, " seconds\n")
-random.shuffle(arrT)
-
-start_time = time.time()
-insertion_sort(arrT)
-arrT_total_time = time.time() - start_time
-print("Sorting time of Insertion Sort using 1000 elements: ", arrT_total_time, " seconds\n\n")
-random.shuffle(arrT)
-
-
-# Record time for array of 10_000 elements
-start_time = time.time()
-bubble_sort(arrTT)
-arrTT_total_time = time.time() - start_time
-print("Sorting time of Bubble Sort using 10000 elements: ", arrTT_total_time, " seconds\n")
-random.shuffle(arrTT)
-
-start_time = time.time()
-merge_sort(arrTT)
-arrTT_total_time = time.time() - start_time
-print("Sorting time of Merge Sort using 10000 elements: ", arrTT_total_time, " seconds\n")
-random.shuffle(arrTT)
-
-start_time = time.time()
-quick_sort(arrTT)
-arrTT_total_time = time.time() - start_time
-print("Sorting time of Quick Sort using 10000 elements: ", arrTT_total_time, " seconds\n")
-random.shuffle(arrTT)
-
-start_time = time.time()
-insertion_sort(arrTT)
-arrTT_total_time = time.time() - start_time
-print("Sorting time of Insertion Sort using 10000 elements: ", arrTT_total_time, " seconds\n\n")
-random.shuffle(arrTT)
-
-
-# Record time for array of 100_000 elements
-start_time = time.time()
-bubble_sort(arrHT)
-arrHT_total_time = time.time() - start_time
-print("Sorting time of Bubble Sort using 100000 elements: ", arrHT_total_time, " seconds\n")
-random.shuffle(arrHT)
-
-start_time = time.time()
-merge_sort(arrHT)
-arrHT_total_time = time.time() - start_time
-print("Sorting time of Merge Sort using 100000 elements: ", arrHT_total_time, " seconds\n")
-random.shuffle(arrHT)
-
-start_time = time.time()
-quick_sort(arrHT)
-arrHT_total_time = time.time() - start_time
-print("Sorting time of Quick Sort using 100000 elements: ", arrHT_total_time, " seconds\n")
-random.shuffle(arrHT)
-
-start_time = time.time()
-insertion_sort(arrHT)
-arrHT_total_time = time.time() - start_time
-print("Sorting time of Insertion Sort using 100000 elements: ", arrHT_total_time, " seconds\n\n")
-random.shuffle(arrHT)
