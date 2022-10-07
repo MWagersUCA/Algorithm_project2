@@ -5,9 +5,10 @@
 
 import time
 import random 
+import sys
 import pandas as pd # Could use for graphs
 
-
+sys.setrecursionlimit(1_000_000)
 
 # Generates random numbers
 def randomNumberList(num, start, end):
@@ -206,7 +207,7 @@ print("Average T(n): ", experiment(arrHT, merge_sort))
 print("Best T(n): ", experiment(arrHT, merge_sort))
 print("Worst T(n): ", experiment(reverse_order(arrHT), merge_sort))
 
-
+ 
 # Test Quick Sort
 print("Array of 100 Elements: Quick Sort")
 print("Average T(n): ", experiment(arrH, quick_sort))
