@@ -11,12 +11,22 @@ import pandas as pd # Could use for graphs
 sys.setrecursionlimit(1_000_000)
 
 # Generates random numbers
+# =============================================================================
+# def randomNumberList(num, start, end):
+#     result = []
+#     for i in range(num):
+#         temp = random.randint(start, end + 1)
+#         result.append(temp)
+#         
+#     return result
+# =============================================================================
+
 def randomNumberList(num, start, end):
     result = []
     for i in range(num):
-        temp = random.randint(start, end + 1)
-        result. append(temp)
+        result.append(i + 1)
         
+    random.shuffle(result)
     return result
 
 # Code for Bubble Sort
@@ -143,69 +153,71 @@ arrHT = randomNumberList(100_000, 1, 100_000)
 
 
 # Test Buble Sort
-print("Array of 100 Elements: Bubble Sort")
-print("Average T(n): ", experiment(arrH, bubble_sort))
-print("Best T(n): ", experiment(arrH, bubble_sort))
-print("Worst T(n): ", experiment(reverse_order(arrH), bubble_sort))
-
-print("\nArray of 1000 Elements: Bubble Sort")
-print("Average T(n): ", experiment(arrT, bubble_sort))
-print("Best T(n): ", experiment(arrT, bubble_sort))
-print("Worst T(n): ", experiment(reverse_order(arrT), bubble_sort))
-
-print("\nArray of 10_000 Elements: Bubble Sort")
-print("Average T(n): ", experiment(arrTT, bubble_sort))
-print("Best T(n): ", experiment(arrTT, bubble_sort))
-print("Worst T(n): ", experiment(reverse_order(arrTT), bubble_sort))
-
-print("\nArray of 100_000 Elements: Bubble Sort")
-print("Average T(n): ", experiment(arrHT, bubble_sort))
-print("Best T(n): ", experiment(arrHT, bubble_sort))
-print("Worst T(n): ", experiment(reverse_order(arrHT), bubble_sort))
-
-
-# Test Insertion Sort
-print("Array of 100 Elements: Insertion Sort")
-print("Average T(n): ", experiment(arrH, insertion_sort))
-print("Best T(n): ", experiment(arrH, insertion_sort))
-print("Worst T(n): ", experiment(reverse_order(arrH), insertion_sort))
-
-print("\nArray of 1000 Elements: Insertion Sort")
-print("Average T(n): ", experiment(arrT, insertion_sort))
-print("Best T(n): ", experiment(arrT, insertion_sort))
-print("Worst T(n): ", experiment(reverse_order(arrT), insertion_sort))
-
-print("\nArray of 10_000 Elements: Insertion Sort")
-print("Average T(n): ", experiment(arrTT, insertion_sort))
-print("Best T(n): ", experiment(arrTT, insertion_sort))
-print("Worst T(n): ", experiment(reverse_order(arrTT), insertion_sort))
-
-print("\nArray of 100_000 Elements: Insertion Sort")
-print("Average T(n): ", experiment(arrHT, insertion_sort))
-print("Best T(n): ", experiment(arrHT, insertion_sort))
-print("Worst T(n): ", experiment(reverse_order(arrHT), insertion_sort))
-
-
-# Test Merge Sort
-print("Array of 100 Elements: Merge Sort")
-print("Average T(n): ", experiment(arrH, merge_sort))
-print("Best T(n): ", experiment(arrH, merge_sort))
-print("Worst T(n): ", experiment(reverse_order(arrH), merge_sort))
-
-print("\nArray of 1000 Elements: Merge Sort")
-print("Average T(n): ", experiment(arrT, merge_sort))
-print("Best T(n): ", experiment(arrT, merge_sort))
-print("Worst T(n): ", experiment(reverse_order(arrT), merge_sort))
-
-print("\nArray of 10_000 Elements: Merge Sort")
-print("Average T(n): ", experiment(arrTT, merge_sort))
-print("Best T(n): ", experiment(arrTT, merge_sort))
-print("Worst T(n): ", experiment(reverse_order(arrTT), merge_sort))
-
-print("\nArray of 100_000 Elements: Merge Sort")
-print("Average T(n): ", experiment(arrHT, merge_sort))
-print("Best T(n): ", experiment(arrHT, merge_sort))
-print("Worst T(n): ", experiment(reverse_order(arrHT), merge_sort))
+# =============================================================================
+# print("Array of 100 Elements: Bubble Sort")
+# print("Average T(n): ", experiment(arrH, bubble_sort))
+# print("Best T(n): ", experiment(arrH, bubble_sort))
+# print("Worst T(n): ", experiment(reverse_order(arrH), bubble_sort))
+# 
+# print("\nArray of 1000 Elements: Bubble Sort")
+# print("Average T(n): ", experiment(arrT, bubble_sort))
+# print("Best T(n): ", experiment(arrT, bubble_sort))
+# print("Worst T(n): ", experiment(reverse_order(arrT), bubble_sort))
+# 
+# print("\nArray of 10_000 Elements: Bubble Sort")
+# print("Average T(n): ", experiment(arrTT, bubble_sort))
+# print("Best T(n): ", experiment(arrTT, bubble_sort))
+# print("Worst T(n): ", experiment(reverse_order(arrTT), bubble_sort))
+# 
+# print("\nArray of 100_000 Elements: Bubble Sort")
+# print("Average T(n): ", experiment(arrHT, bubble_sort))
+# print("Best T(n): ", experiment(arrHT, bubble_sort))
+# print("Worst T(n): ", experiment(reverse_order(arrHT), bubble_sort))
+# 
+# 
+# # Test Insertion Sort
+# print("Array of 100 Elements: Insertion Sort")
+# print("Average T(n): ", experiment(arrH, insertion_sort))
+# print("Best T(n): ", experiment(arrH, insertion_sort))
+# print("Worst T(n): ", experiment(reverse_order(arrH), insertion_sort))
+# 
+# print("\nArray of 1000 Elements: Insertion Sort")
+# print("Average T(n): ", experiment(arrT, insertion_sort))
+# print("Best T(n): ", experiment(arrT, insertion_sort))
+# print("Worst T(n): ", experiment(reverse_order(arrT), insertion_sort))
+# 
+# print("\nArray of 10_000 Elements: Insertion Sort")
+# print("Average T(n): ", experiment(arrTT, insertion_sort))
+# print("Best T(n): ", experiment(arrTT, insertion_sort))
+# print("Worst T(n): ", experiment(reverse_order(arrTT), insertion_sort))
+# 
+# print("\nArray of 100_000 Elements: Insertion Sort")
+# print("Average T(n): ", experiment(arrHT, insertion_sort))
+# print("Best T(n): ", experiment(arrHT, insertion_sort))
+# print("Worst T(n): ", experiment(reverse_order(arrHT), insertion_sort))
+# 
+# 
+# # Test Merge Sort
+# print("Array of 100 Elements: Merge Sort")
+# print("Average T(n): ", experiment(arrH, merge_sort))
+# print("Best T(n): ", experiment(arrH, merge_sort))
+# print("Worst T(n): ", experiment(reverse_order(arrH), merge_sort))
+# 
+# print("\nArray of 1000 Elements: Merge Sort")
+# print("Average T(n): ", experiment(arrT, merge_sort))
+# print("Best T(n): ", experiment(arrT, merge_sort))
+# print("Worst T(n): ", experiment(reverse_order(arrT), merge_sort))
+# 
+# print("\nArray of 10_000 Elements: Merge Sort")
+# print("Average T(n): ", experiment(arrTT, merge_sort))
+# print("Best T(n): ", experiment(arrTT, merge_sort))
+# print("Worst T(n): ", experiment(reverse_order(arrTT), merge_sort))
+# 
+# print("\nArray of 100_000 Elements: Merge Sort")
+# print("Average T(n): ", experiment(arrHT, merge_sort))
+# print("Best T(n): ", experiment(arrHT, merge_sort))
+# print("Worst T(n): ", experiment(reverse_order(arrHT), merge_sort))
+# =============================================================================
 
  
 # Test Quick Sort
@@ -228,3 +240,11 @@ print("\nArray of 100_000 Elements: Quick Sort")
 print("Average T(n): ", experiment(arrHT, quick_sort))
 print("Best T(n): ", experiment(arrHT, quick_sort))
 print("Worst T(n): ", experiment(reverse_order(arrHT), quick_sort))
+
+
+
+
+
+
+
+
