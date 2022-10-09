@@ -14,6 +14,8 @@
 #   then tested against an already sorted array (least to greatest)
 #   finally tested against a reversed ordered array (greatest to least)
 # =============================================================================
+# NOTE: This program takes several minutes up to hours to finish
+# =============================================================================
 
 import time
 import random 
