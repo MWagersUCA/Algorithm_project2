@@ -2,7 +2,7 @@
 # =============================================================================
 # Algorithms project 2
 # Due date: October 9, 2022
-# Authors: Matt Wagers, ..., ...
+# Authors: Matt Wagers, Caylen Johnson, Tyler Menzie
 # =============================================================================
 # This code was written and created to test the time complexity and
 #   sorting computation time of 4 different sorting algorithms.
